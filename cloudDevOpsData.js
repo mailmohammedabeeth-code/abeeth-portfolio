@@ -8,7 +8,27 @@ export const cloudHero = {
   role: "Cloud & DevOps Engineer | Software Engineer",
   location: "Tamil Nadu, India",
   tagline: "Architecting resilient cloud infrastructure on AWS, containerizing microservices with Docker, configuring Linux server environments, automating CI/CD pipelines, and provisioning reproducible environments.",
-  resumePdfPath: "/documents/cloud-devops-resume.pdf",
+  resumePdfPath: "/documents/mohammed-abeeth-cloud-engineer-resume.pdf",
+  cloudResumePdfPath: "/documents/mohammed-abeeth-cloud-engineer-resume.pdf",
+  devOpsResumePdfPath: "/documents/mohammed-abeeth-devops-engineer-resume.pdf",
+  resumes: [
+    {
+      id: "cloud-engineer",
+      role: "Cloud Engineer",
+      category: "Cloud Infrastructure & AWS Services",
+      description: "AWS cloud provisioning, Linux server administration, scalable infrastructure architecture, and secure networking.",
+      filename: "Mohammed_Abeeth_H_Cloud_Engineer_Resume.pdf",
+      pdfUrl: "/documents/mohammed-abeeth-cloud-engineer-resume.pdf"
+    },
+    {
+      id: "devops-engineer",
+      role: "DevOps Engineer",
+      category: "CI/CD & Pipeline Automation",
+      description: "Docker containerization, Jenkins & GitHub Actions CI/CD pipelines, automated deployments, and reproducible environments.",
+      filename: "Mohammed_Abeeth_H_DevOps_Engineer_Resume.pdf",
+      pdfUrl: "/documents/mohammed-abeeth-devops-engineer-resume.pdf"
+    }
+  ],
   metrics: [
     { label: "Primary Cloud", value: "AWS & EC2" },
     { label: "Containerization", value: "Docker & Compose" },

@@ -8,7 +8,7 @@ export const pythonHero = {
   role: "Python Developer | Software Engineer",
   location: "Tamil Nadu, India",
   tagline: "Architecting robust backend services, RESTful APIs, relational data pipelines, and intelligent deep learning inference pipelines with clean, maintainable Python code.",
-  resumePdfPath: "/documents/abeeth-python-developer-resume.pdf",
+  resumePdfPath: "/documents/mohammed-abeeth-python-developer-resume.pdf",
   metrics: [
     { label: "Core Language", value: "Python 3.11+" },
     { label: "Backend Core", value: "Flask & REST APIs" },

@@ -62,8 +62,9 @@ export default function CloudDevOpsPage() {
   // Interactive PDF/Certificate Viewer Modal
   const [activeViewerModal, setActiveViewerModal] = useState(null);
 
-  // Resume Inline Viewer Toggle
+  // Resume Inline Viewer Toggle & Active Tab
   const [showInlineResume, setShowInlineResume] = useState(true);
+  const [selectedResumeTab, setSelectedResumeTab] = useState('cloud');
 
   // Copied states
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -183,12 +184,11 @@ export default function CloudDevOpsPage() {
           {/* Right: Actions */}
           <div className="flex items-center gap-3">
             <a
-              href={cloudHero.resumePdfPath}
-              download="Mohammed_Abeeth_H_Cloud_DevOps_Resume.pdf"
+              href="#resume"
               className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black text-xs font-mono font-bold transition-all shadow-sm"
             >
               <Download className="w-3.5 h-3.5" />
-              <span>Resume PDF</span>
+              <span>Resumes (2)</span>
             </a>
 
             {/* Mobile Hamburger Button */}
@@ -222,12 +222,12 @@ export default function CloudDevOpsPage() {
               ))}
             </div>
             <a
-              href={cloudHero.resumePdfPath}
-              download="Mohammed_Abeeth_H_Cloud_DevOps_Resume.pdf"
+              href="#resume"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-[#FF453A] text-black font-mono font-bold text-xs"
             >
               <Download className="w-4 h-4" />
-              <span>Download Resume PDF</span>
+              <span>Download Resumes (2)</span>
             </a>
           </div>
         )}
@@ -325,12 +325,11 @@ export default function CloudDevOpsPage() {
               <div className="space-y-4 pt-2">
                 <div className="flex flex-wrap items-center gap-3 w-full">
                   <a
-                    href={cloudHero.resumePdfPath}
-                    download="Mohammed_Abeeth_H_Cloud_DevOps_Resume.pdf"
+                    href="#resume"
                     className="flex-1 min-w-[170px] flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black font-mono font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95"
                   >
                     <Download className="w-4 h-4" />
-                    <span>DOWNLOAD RESUME</span>
+                    <span>VIEW RESUMES</span>
                   </a>
 
                   <a
@@ -966,7 +965,7 @@ export default function CloudDevOpsPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 7. RESUME SECTION                                        */}
+      {/* 7. RESUME SECTION — CLOUD & DEVOPS RESUMES               */}
       {/* ======================================================== */}
       <section id="resume" style={{ scrollMarginTop: '80px' }} className="scroll-mt-20 sm:scroll-mt-24 py-8 sm:py-10 bg-[#000000] border-t border-[#292929]">
         <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -977,56 +976,197 @@ export default function CloudDevOpsPage() {
                 <span>// 05 CURRICULUM VITAE</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">
-                CLOUD ENGINEER <span className="text-[#FF453A]">RESUME</span>
+                PROFESSIONAL <span className="text-[#FF453A]">RESUMES</span>
               </h2>
               <p className="text-sm text-[#B3B3B3] mt-2">
-                Verified academic curriculum, cloud infrastructure coursework, and hands-on DevOps competencies.
+                Specialized verified curriculum and competencies for Cloud Engineer and DevOps Engineer job roles.
               </p>
             </div>
 
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setShowInlineResume(!showInlineResume)}
-                className="px-4 py-2 rounded-lg bg-[#0D0D0D] border border-[#292929] hover:border-white text-xs font-mono text-white transition-all"
+                className="px-4 py-2.5 rounded-lg bg-[#0D0D0D] border border-[#292929] hover:border-white text-xs font-mono text-[#B3B3B3] hover:text-white transition-all cursor-pointer"
               >
                 {showInlineResume ? 'Hide Embedded PDF' : 'Show Embedded PDF'}
               </button>
-
-              <a
-                href={cloudHero?.resumePdfPath || "/documents/cloud-devops-resume.pdf"}
-                download="Mohammed_Abeeth_H_Cloud_DevOps_Resume.pdf"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black font-mono font-bold text-xs transition-all shadow-md"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span>Download Resume</span>
-              </a>
             </div>
           </div>
 
-          {/* Inline Embedded Resume Viewer */}
+          {/* TWO SEPARATE RESUME CARDS */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-8">
+            
+            {/* Resume 1: Cloud Engineer */}
+            <div className="p-6 rounded-2xl bg-[#0D0D0D] border border-[#292929] hover:border-[#FF453A] transition-all flex flex-col justify-between group shadow-xl">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#000000] border border-[#292929] flex items-center justify-center text-[#FF453A] group-hover:scale-105 transition-transform">
+                    <Cloud className="w-5 h-5" />
+                  </div>
+                  <span className="text-[10px] font-mono px-2.5 py-1 rounded bg-[#171717] text-[#FF453A] border border-[#292929] font-bold">
+                    CLOUD INFRASTRUCTURE
+                  </span>
+                </div>
+
+                <div className="text-xs font-mono text-[#888888] uppercase tracking-wider mb-1">
+                  RESUME 01 // AWS & INFRASTRUCTURE
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-[#FF453A] transition-colors mb-2">
+                  Cloud Engineer
+                </h3>
+                <p className="text-xs sm:text-sm text-[#B3B3B3] leading-relaxed mb-4">
+                  AWS cloud architecture, EC2 instance provisioning, Linux server administration, IAM security policies, and scalable infrastructure deployment.
+                </p>
+
+                <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#000000] border border-[#222222] text-xs font-mono text-[#888888] mb-6">
+                  <FileText className="w-4 h-4 text-[#FF453A] flex-shrink-0" />
+                  <span className="text-white truncate">Mohammed_Abeeth_H_Cloud_Engineer_Resume.pdf</span>
+                </div>
+              </div>
+
+              {/* Action Buttons: View & Download */}
+              <div className="pt-4 border-t border-[#222222] flex items-center gap-3">
+                <button
+                  onClick={() => {
+                    setSelectedResumeTab('cloud');
+                    setActiveViewerModal({
+                      title: "Cloud Engineer Resume",
+                      issuer: "Mohammed Abeeth H",
+                      pdfUrl: "/documents/mohammed-abeeth-cloud-engineer-resume.pdf"
+                    });
+                  }}
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#171717] hover:bg-[#202020] border border-[#292929] hover:border-[#FF453A] text-white font-mono text-xs font-bold transition-all cursor-pointer"
+                >
+                  <Eye className="w-4 h-4 text-[#FF453A]" />
+                  <span>View Resume</span>
+                </button>
+
+                <a
+                  href="/documents/mohammed-abeeth-cloud-engineer-resume.pdf"
+                  download="Mohammed_Abeeth_H_Cloud_Engineer_Resume.pdf"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black font-mono font-bold text-xs transition-all shadow-md active:scale-95"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download Resume</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Resume 2: DevOps Engineer */}
+            <div className="p-6 rounded-2xl bg-[#0D0D0D] border border-[#292929] hover:border-[#FF453A] transition-all flex flex-col justify-between group shadow-xl">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#000000] border border-[#292929] flex items-center justify-center text-[#FF453A] group-hover:scale-105 transition-transform">
+                    <Server className="w-5 h-5" />
+                  </div>
+                  <span className="text-[10px] font-mono px-2.5 py-1 rounded bg-[#171717] text-[#FF453A] border border-[#292929] font-bold">
+                    CI/CD & AUTOMATION
+                  </span>
+                </div>
+
+                <div className="text-xs font-mono text-[#888888] uppercase tracking-wider mb-1">
+                  RESUME 02 // PIPELINE & CONTAINERS
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-[#FF453A] transition-colors mb-2">
+                  DevOps Engineer
+                </h3>
+                <p className="text-xs sm:text-sm text-[#B3B3B3] leading-relaxed mb-4">
+                  Docker containerization, automated Jenkins & GitHub Actions CI/CD pipelines, Linux automation scripting, and deployment orchestration.
+                </p>
+
+                <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#000000] border border-[#222222] text-xs font-mono text-[#888888] mb-6">
+                  <FileText className="w-4 h-4 text-[#FF453A] flex-shrink-0" />
+                  <span className="text-white truncate">Mohammed_Abeeth_H_DevOps_Engineer_Resume.pdf</span>
+                </div>
+              </div>
+
+              {/* Action Buttons: View & Download */}
+              <div className="pt-4 border-t border-[#222222] flex items-center gap-3">
+                <button
+                  onClick={() => {
+                    setSelectedResumeTab('devops');
+                    setActiveViewerModal({
+                      title: "DevOps Engineer Resume",
+                      issuer: "Mohammed Abeeth H",
+                      pdfUrl: "/documents/mohammed-abeeth-devops-engineer-resume.pdf"
+                    });
+                  }}
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#171717] hover:bg-[#202020] border border-[#292929] hover:border-[#FF453A] text-white font-mono text-xs font-bold transition-all cursor-pointer"
+                >
+                  <Eye className="w-4 h-4 text-[#FF453A]" />
+                  <span>View Resume</span>
+                </button>
+
+                <a
+                  href="/documents/mohammed-abeeth-devops-engineer-resume.pdf"
+                  download="Mohammed_Abeeth_H_DevOps_Engineer_Resume.pdf"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black font-mono font-bold text-xs transition-all shadow-md active:scale-95"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download Resume</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Interactive Embedded Resume Viewer with Dual Tabs */}
           {showInlineResume && (
             <div className="rounded-2xl bg-[#0D0D0D] border border-[#292929] p-4 sm:p-6 shadow-2xl overflow-hidden">
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#292929] text-xs font-mono">
-                <span className="text-white flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-[#FF453A]" />
-                  Mohammed_Abeeth_H_Cloud_DevOps_Resume.pdf
-                </span>
-                <button
-                  onClick={() => setActiveViewerModal({
-                    title: "Cloud & DevOps Engineer Resume",
-                    issuer: "Mohammed Abeeth H",
-                    pdfUrl: cloudHero?.resumePdfPath || "/documents/cloud-devops-resume.pdf"
-                  })}
-                  className="flex items-center gap-1.5 text-[#B3B3B3] hover:text-white"
-                >
-                  <Maximize2 className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline">Open Fullscreen</span>
-                </button>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-[#292929] gap-3 text-xs font-mono">
+                <div className="flex items-center gap-2">
+                  <span className="text-[#888888]">PREVIEWING:</span>
+                  <div className="flex items-center rounded-lg bg-[#000000] p-1 border border-[#222222]">
+                    <button
+                      onClick={() => setSelectedResumeTab('cloud')}
+                      className={`px-3 py-1 rounded text-xs font-mono transition-colors cursor-pointer ${
+                        selectedResumeTab === 'cloud'
+                          ? 'bg-[#FF453A] text-black font-bold'
+                          : 'text-[#B3B3B3] hover:text-white'
+                      }`}
+                    >
+                      Cloud Engineer Resume
+                    </button>
+                    <button
+                      onClick={() => setSelectedResumeTab('devops')}
+                      className={`px-3 py-1 rounded text-xs font-mono transition-colors cursor-pointer ${
+                        selectedResumeTab === 'devops'
+                          ? 'bg-[#FF453A] text-black font-bold'
+                          : 'text-[#B3B3B3] hover:text-white'
+                      }`}
+                    >
+                      DevOps Engineer Resume
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <a
+                    href={selectedResumeTab === 'cloud' ? "/documents/mohammed-abeeth-cloud-engineer-resume.pdf" : "/documents/mohammed-abeeth-devops-engineer-resume.pdf"}
+                    download={selectedResumeTab === 'cloud' ? "Mohammed_Abeeth_H_Cloud_Engineer_Resume.pdf" : "Mohammed_Abeeth_H_DevOps_Engineer_Resume.pdf"}
+                    className="flex items-center gap-1.5 text-xs text-[#FF453A] hover:underline"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download This PDF</span>
+                  </a>
+
+                  <button
+                    onClick={() => setActiveViewerModal({
+                      title: selectedResumeTab === 'cloud' ? "Cloud Engineer Resume" : "DevOps Engineer Resume",
+                      issuer: "Mohammed Abeeth H",
+                      pdfUrl: selectedResumeTab === 'cloud' ? "/documents/mohammed-abeeth-cloud-engineer-resume.pdf" : "/documents/mohammed-abeeth-devops-engineer-resume.pdf"
+                    })}
+                    className="flex items-center gap-1.5 text-[#B3B3B3] hover:text-white cursor-pointer"
+                  >
+                    <Maximize2 className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Open Fullscreen</span>
+                  </button>
+                </div>
               </div>
 
               <iframe
-                src={`${cloudHero?.resumePdfPath || "/documents/cloud-devops-resume.pdf"}#view=FitH`}
-                title="Mohammed Abeeth H - Cloud & DevOps Resume"
+                src={`${selectedResumeTab === 'cloud' ? "/documents/mohammed-abeeth-cloud-engineer-resume.pdf" : "/documents/mohammed-abeeth-devops-engineer-resume.pdf"}#view=FitH`}
+                title={selectedResumeTab === 'cloud' ? "Mohammed Abeeth H - Cloud Engineer Resume" : "Mohammed Abeeth H - DevOps Engineer Resume"}
                 className="w-full h-[600px] sm:h-[800px] border-0 rounded-xl bg-white"
               />
             </div>

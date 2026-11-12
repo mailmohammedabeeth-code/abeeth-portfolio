@@ -1017,20 +1017,32 @@ export default function PythonDevPage() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => setActiveViewerModal({
+                  title: "Python Developer Resume",
+                  issuer: "Mohammed Abeeth H",
+                  pdfUrl: pythonHero?.resumePdfPath || "/documents/mohammed-abeeth-python-developer-resume.pdf"
+                })}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#0D0D0D] border border-[#292929] hover:border-[#FF453A] text-xs font-mono text-white transition-all cursor-pointer shadow-sm"
+              >
+                <Eye className="w-3.5 h-3.5 text-[#FF453A]" />
+                <span>View Resume</span>
+              </button>
+
               <button
                 onClick={() => setShowInlineResume(!showInlineResume)}
-                className="px-4 py-2 rounded-lg bg-[#0D0D0D] border border-[#292929] hover:border-white text-xs font-mono text-white transition-all"
+                className="px-4 py-2.5 rounded-lg bg-[#0D0D0D] border border-[#292929] hover:border-white text-xs font-mono text-[#B3B3B3] hover:text-white transition-all"
               >
                 {showInlineResume ? 'Hide Embedded PDF' : 'Show Embedded PDF'}
               </button>
 
               <a
-                href={pythonHero?.resumePdfPath || "/documents/abeeth-python-developer-resume.pdf"}
+                href={pythonHero?.resumePdfPath || "/documents/mohammed-abeeth-python-developer-resume.pdf"}
                 download="Mohammed_Abeeth_H_Python_Developer_Resume.pdf"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black font-mono font-bold text-xs transition-all shadow-md"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black font-mono font-bold text-xs transition-all shadow-md active:scale-95"
               >
-                <Download className="w-3.5 h-3.5" />
+                <Download className="w-4 h-4" />
                 <span>Download Resume</span>
               </a>
             </div>
@@ -1048,9 +1060,9 @@ export default function PythonDevPage() {
                   onClick={() => setActiveViewerModal({
                     title: "Python Developer Resume",
                     issuer: "Mohammed Abeeth H",
-                    pdfUrl: pythonHero?.resumePdfPath || "/documents/abeeth-python-developer-resume.pdf"
+                    pdfUrl: pythonHero?.resumePdfPath || "/documents/mohammed-abeeth-python-developer-resume.pdf"
                   })}
-                  className="flex items-center gap-1.5 text-[#B3B3B3] hover:text-white"
+                  className="flex items-center gap-1.5 text-[#B3B3B3] hover:text-white cursor-pointer"
                 >
                   <Maximize2 className="w-3.5 h-3.5" />
                   <span className="hidden sm:inline">Open Fullscreen</span>
@@ -1058,7 +1070,7 @@ export default function PythonDevPage() {
               </div>
 
               <iframe
-                src={`${pythonHero?.resumePdfPath || "/documents/abeeth-python-developer-resume.pdf"}#view=FitH`}
+                src={`${pythonHero?.resumePdfPath || "/documents/mohammed-abeeth-python-developer-resume.pdf"}#view=FitH`}
                 title="Mohammed Abeeth H - Python Developer Resume"
                 className="w-full h-[600px] sm:h-[800px] border-0 rounded-xl bg-white"
               />

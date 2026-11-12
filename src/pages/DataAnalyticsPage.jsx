@@ -977,35 +977,63 @@ export default function DataAnalyticsPage() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => setActiveViewerModal({
+                  title: "Data Analyst Resume",
+                  issuer: "Mohammed Abeeth H",
+                  pdfUrl: dataAnalyticsHero?.resumePdfPath || "/documents/mohammed-abeeth-data-analyst-resume.pdf"
+                })}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#0D0D0D] border border-[#292929] hover:border-[#FF453A] text-xs font-mono text-white transition-all cursor-pointer shadow-sm"
+              >
+                <Eye className="w-3.5 h-3.5 text-[#FF453A]" />
+                <span>View Resume</span>
+              </button>
+
               <button
                 onClick={() => setShowInlineResume(!showInlineResume)}
-                className="px-4 py-2 rounded-lg bg-[#0D0D0D] border border-[#292929] hover:border-white text-xs font-mono text-white transition-all"
+                className="px-4 py-2.5 rounded-lg bg-[#0D0D0D] border border-[#292929] hover:border-white text-xs font-mono text-[#B3B3B3] hover:text-white transition-all"
               >
                 {showInlineResume ? 'Hide Embedded PDF' : 'Show Embedded PDF'}
               </button>
 
               <a
-                href={dataAnalyticsHero?.resumePdfPath || "/documents/abeeth-data-analyst-resume.pdf"}
+                href={dataAnalyticsHero?.resumePdfPath || "/documents/mohammed-abeeth-data-analyst-resume.pdf"}
                 download="Mohammed_Abeeth_H_Data_Analyst_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black text-xs font-mono font-bold transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#FF453A] hover:bg-[#E03E34] text-black text-xs font-mono font-bold transition-all shadow-md active:scale-95"
               >
                 <Download className="w-4 h-4" />
-                <span>Download Resume PDF</span>
+                <span>Download Resume</span>
               </a>
             </div>
           </div>
 
           {/* Embedded Viewer */}
           {showInlineResume && (
-            <div className="rounded-xl bg-[#0D0D0D] border border-[#292929] overflow-hidden p-2 shadow-2xl">
-              <div className="h-[680px] w-full rounded-lg overflow-hidden bg-[#000000]">
-                <iframe
-                  src={`${dataAnalyticsHero?.resumePdfPath || "/documents/abeeth-data-analyst-resume.pdf"}#toolbar=0`}
-                  title="Mohammed Abeeth H Data Analyst Resume"
-                  className="w-full h-full border-0"
-                />
+            <div className="rounded-2xl bg-[#0D0D0D] border border-[#292929] p-4 sm:p-6 shadow-2xl overflow-hidden">
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#292929] text-xs font-mono">
+                <span className="text-white flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-[#FF453A]" />
+                  Mohammed_Abeeth_H_Data_Analyst_Resume.pdf
+                </span>
+                <button
+                  onClick={() => setActiveViewerModal({
+                    title: "Data Analyst Resume",
+                    issuer: "Mohammed Abeeth H",
+                    pdfUrl: dataAnalyticsHero?.resumePdfPath || "/documents/mohammed-abeeth-data-analyst-resume.pdf"
+                  })}
+                  className="flex items-center gap-1.5 text-[#B3B3B3] hover:text-white cursor-pointer"
+                >
+                  <Maximize2 className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Open Fullscreen</span>
+                </button>
               </div>
+
+              <iframe
+                src={`${dataAnalyticsHero?.resumePdfPath || "/documents/mohammed-abeeth-data-analyst-resume.pdf"}#view=FitH`}
+                title="Mohammed Abeeth H Data Analyst Resume"
+                className="w-full h-[600px] sm:h-[800px] border-0 rounded-xl bg-white"
+              />
             </div>
           )}
 

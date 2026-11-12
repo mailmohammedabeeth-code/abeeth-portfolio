@@ -8,7 +8,7 @@ export const dataAnalyticsHero = {
   role: "Data Analyst | Software Engineer",
   location: "Tamil Nadu, India",
   tagline: "Bridging analytical rigor, statistical modeling, and executive dashboard storytelling to solve complex business problems.",
-  resumePdfPath: "/documents/abeeth-data-analyst-resume.pdf",
+  resumePdfPath: "/documents/mohammed-abeeth-data-analyst-resume.pdf",
   metrics: [
     { label: "Core Analytics Stack", value: "Excel • SQL • Power BI • Tableau" },
     { label: "Querying & Modeling", value: "PostgreSQL & Relational Schemas" },
